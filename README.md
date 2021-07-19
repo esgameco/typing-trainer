@@ -8,10 +8,11 @@ A future goal is to have a backend api that allows users to race eachother in re
 ## Tech Stack
 
 - Frontend
+    - Typescript
     - React
     - React Query
-    - Typescript
 - Backend
+    - Typescript
     - Node
     - Express
     - Socket.io
@@ -20,6 +21,17 @@ A future goal is to have a backend api that allows users to race eachother in re
 ## Todo
 
 - Stage 1: Prototype
-    - [ ] Implement trainer with quotes from github
+    - [ ] Implement trainer with quotes from github 
+        - [ ] Fetch quotes from github
+        - [ ] Clean quotes
+        - [ ] Display quote to player
+        - [ ] Validate input
+        - [ ] Change state on valid input
+        - [ ] Display errors
+        - [ ] Show info screen on finish
+        - [ ] Reset state on new game
     - [ ] Create backend that serves quotes
-    - [ ] Testing checkboxes right now
+    - [ ] Allow for server to accept input from client
+        - [ ] Client sends letters to server
+        - [ ] Server changes state of player
+        - [ ] Server emits to all players
