@@ -4,7 +4,7 @@ import Trainer from '../trainer'
 
 const App: React.FC = () => {
     return (
-        <div className="App">
+        <div className="app">
             <header>
                 <h1>Head</h1>
             </header>
