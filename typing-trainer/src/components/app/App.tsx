@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Trainer from '../trainer'
+
 const App: React.FC = () => {
     return (
         <div className="App">
@@ -7,7 +9,7 @@ const App: React.FC = () => {
                 <h1>Head</h1>
             </header>
             <main>
-                <p>Test</p>
+                <Trainer content="test"></Trainer>
             </main>
         </div>
     );
