@@ -1,3 +1,3 @@
-import Trainer from './Trainer'
+import Trainer from './trainer'
 
 export default Trainer
