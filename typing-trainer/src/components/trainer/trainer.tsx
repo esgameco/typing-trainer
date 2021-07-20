@@ -1,28 +1,15 @@
 import React from 'react'
 
+import Input from '../input'
+
 type TrainerProps = {
     content: string;
 };
 
-type TrainerState = {
-    input: string;
-};
-
-class Trainer extends React.Component<TrainerProps, TrainerState> {
-    // Secondary state type setting
-    state: TrainerState = {
-        input: ''
-    };
-
-    componentDidMount() {
-        this.setState({
-            input: 'test'
-        });
-    }
-
+class Trainer extends React.Component<TrainerProps> {
     render() {
         return (
-            <h1>{this.state.input} {this.props.content}</h1>
+            <Input content={this.props.content}></Input>
         );
     }
 }
