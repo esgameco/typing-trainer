@@ -4,6 +4,7 @@ import {validateInput} from './validator'
 
 type InputProps = {
     content: string;
+    onFinish: Function;
 };
 
 type InputState = {
@@ -42,9 +43,8 @@ class Input extends React.Component<InputProps, InputState> {
             console.log('Incorrect: Expected', this.props.content[this.state.index], 'and got', letter);
         }
 
-        // TODO: Do something when finished
-        if (this.state.index === this.props.content.length-1)
-            console.log(this.props.content, 'finished.')
+        if (this.state.index === this.props.content.length-2)
+            this.props.onFinish();
     }
 
     render() {
