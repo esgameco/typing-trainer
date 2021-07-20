@@ -43,8 +43,13 @@ class Input extends React.Component<InputProps, InputState> {
             console.log('Incorrect: Expected', this.props.content[this.state.index], 'and got', letter);
         }
 
-        if (this.state.index === this.props.content.length-2)
+        if (this.state.index === this.props.content.length-2) {
             this.props.onFinish();
+            this.setState({
+                current: '',
+                index: 0
+            })
+        }
     }
 
     render() {

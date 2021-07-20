@@ -8,7 +8,9 @@ import Input from '../input';
 // };
 
 type TrainerState = {
-    book: string[];
+    parts: string[];
+    // TODO: Move parts into app and only have currentPart, call function passed from app to get new part
+    currentPart: string;
 };
 
 class Trainer extends React.Component<{}, TrainerState> {
@@ -20,37 +22,42 @@ class Trainer extends React.Component<{}, TrainerState> {
     }
 
     state: TrainerState =  {
-        book: ['']
+        parts: [''],
+        currentPart: ''
     }
 
     async componentDidMount() {
         axios.get('/book.txt')
             .then((res: AxiosResponse) => {
                 this.setState({
-                    book: res.data.split('\n')
+                    parts: res.data.split('\n'),
                 })
+                this.newPart();
             }, (error: AxiosError) => {
                 console.log(error);
             });
     }
 
     getRandomPart() {
-        const partIndex = Math.floor(Math.random()*this.state.book.length);
-        console.log(partIndex)
+        const partIndex = Math.floor(Math.random()*this.state.parts.length);
 
-        return this.state.book[partIndex];
+        return this.state.parts[partIndex];
+    }
+
+    newPart() {
+        this.setState({
+            currentPart: this.getRandomPart()
+        });
     }
 
     onFinish() {
-        console.log('hello')
+        this.newPart();
     }
 
     render() {
-        const part = this.getRandomPart();
-
         return <div>
-            <p>{part}</p>
-            <Input content={part} onFinish={this.onFinish}></Input>
+            <p>{this.state.currentPart}</p>
+            <Input content={this.state.currentPart} onFinish={this.onFinish}></Input>
         </div>;
     }
 }
