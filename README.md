@@ -22,14 +22,14 @@ A future goal is to have a backend api that allows users to race eachother in re
 
 - Stage 1: Prototype
     - [ ] Implement trainer with quotes from github 
-        - [ ] Fetch quotes from github
-        - [ ] Clean quotes
-        - [ ] Display quote to player
-        - [ ] Validate input
-        - [ ] Change state on valid input
+        - [x] Fetch quotes from github
+        - [x] Clean quotes
+        - [x] Display quote to player
+        - [x] Validate input
+        - [x] Change state on valid input
         - [ ] Display errors
         - [ ] Show info screen on finish
-        - [ ] Reset state on new game
+        - [x] Reset state on new game
     - [ ] Create backend that serves quotes
     - [ ] Allow for server to accept input from client
         - [ ] Client sends letters to server
